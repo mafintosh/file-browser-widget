@@ -82,6 +82,8 @@ module.exports = function(opts) {
     that.emit(entry.type === 'directory' ? 'directory' : 'file', entry.path, entry)
   }
 
+  that.style = style
+
   that.directory = function(cwd, entries) {
     opts.cwd = cwd
     opts.entries = entries
