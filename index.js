@@ -35,8 +35,9 @@ proto.renderDirectory = function() {
     var name = path.basename(entry.name || entry.path)
     var modified = entry.mtime || entry.modified
     var size = entry.size
+    var type = entry.type || 'file'
 
-    return DOM.li({className:entry.type+' entry', key:entry.path, onClick:onclick},
+    return DOM.li({className:type+' entry', key:entry.path, onClick:onclick},
       DOM.a({href:'javascript:void(0)'},
         DOM.span({className:'name'}, name),
         modified ? DOM.span({className:'modified'}, relative(toDate(modified))) : undefined,
@@ -81,14 +82,14 @@ module.exports = function(opts) {
     that.emit(entry.type === 'directory' ? 'directory' : 'file', entry.path, entry)
   }
 
-  that.renderDirectory = function(cwd, entries) {
+  that.directory = function(cwd, entries) {
     opts.cwd = cwd
     opts.entries = entries
     opts.blob = null
     if (comp) comp.setState(opts)
   }
 
-  that.renderFile = function(cwd, blob) {
+  that.file = function(cwd, blob) {
     opts.cwd = cwd
     opts.entries = null
     opts.blob = blob
