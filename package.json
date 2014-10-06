@@ -1,0 +1,16 @@
+{
+  "name": "file-browser",
+  "version": "0.0.0",
+  "description": "File browser widget",
+  "main": "index.js",
+  "author": "Mathias Buus",
+  "scripts": {
+    "demo": "browserify demo/index.js > demo/bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "license": "MIT"
+}
