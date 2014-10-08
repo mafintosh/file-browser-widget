@@ -1,16 +1,38 @@
 {
-  "name": "file-browser",
+  "name": "file-browser-widget",
   "version": "0.0.0",
   "description": "File browser widget",
   "main": "index.js",
   "author": "Mathias Buus",
-  "scripts": {
-    "demo": "browserify demo/index.js > demo/bundle.js"
-  },
   "browserify": {
     "transform": [
       "brfs"
     ]
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^6.0.3"
+  },
+  "dependencies": {
+    "defaultcss": "^1.0.0",
+    "pretty-bytes": "^1.0.1",
+    "react": "^0.11.2",
+    "relative-date": "^1.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/file-browser-widget"
+  },
+  "keywords": [
+    "file",
+    "browser",
+    "widget",
+    "browserify",
+    "browser",
+    "browse"
+  ],
+  "bugs": {
+    "url": "https://github.com/mafintosh/file-browser-widget/issues"
+  },
+  "homepage": "https://github.com/mafintosh/file-browser-widget"
 }

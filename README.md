@@ -3,13 +3,13 @@
 File browser widget for the browser
 
 ```
-npm install file-browser
+npm install file-browser-widget
 ```
 
 ## Usage
 
 ``` js
-var browser = require('file-browser')
+var browser = require('file-browser-widget')
 var br = browser()
 
 br.appendTo(document.body)
