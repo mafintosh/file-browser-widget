@@ -65,7 +65,7 @@ proto.renderFile = function() {
 }
 
 proto.render = function() {
-  return DOM.div({className:'file-browser'},
+  return DOM.div({className:'file-browser-widget'},
     this.state.blob ? this.renderFile() : this.renderDirectory()
   )
 }
@@ -99,7 +99,7 @@ module.exports = function(opts) {
   }
 
   that.appendTo = function(el) {
-    if (opts.style !== false) defaultcss('file-browser', style)
+    if (opts.style !== false) defaultcss('file-browser-widget', style)
     comp = react.renderComponent(Browser(opts), el)
   }
 
