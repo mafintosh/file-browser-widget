@@ -32,12 +32,13 @@ proto.renderDirectory = function() {
       self.props.onentry(entry)
     }
 
-    var name = path.basename(entry.name || entry.path)
+    var key = entry.path || entry.name
+    var name = path.basename(key)
     var modified = entry.mtime || entry.modified
     var size = entry.size
     var type = entry.type || 'file'
 
-    return DOM.li({className:type+' entry', key:entry.path, onClick:onclick},
+    return DOM.li({className:type+' entry', key:key, onClick:onclick},
       DOM.a({href:'javascript:void(0)'},
         DOM.span({className:'name'}, name),
         modified ? DOM.span({className:'modified'}, relative(toDate(modified))) : undefined,
@@ -76,10 +77,11 @@ module.exports = function(opts) {
   if (!opts) opts = {}
 
   var that = new events.EventEmitter()
+  var comp
 
   opts.onentry = function(entry) {
     that.emit('entry', entry)
-    that.emit(entry.type === 'directory' ? 'directory' : 'file', entry.path, entry)
+    that.emit(entry.type === 'directory' ? 'directory' : 'file', entry.path || entry.name, entry)
   }
 
   that.style = style
