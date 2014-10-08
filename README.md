@@ -1,4 +1,4 @@
-# file-browser
+# file-browser-widget
 
 File browser widget for the browser
 
