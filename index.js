@@ -99,6 +99,7 @@ module.exports = function(opts) {
   }
 
   that.appendTo = function(el) {
+    if (typeof el === 'string') el = document.querySelector(el)
     if (opts.style !== false) defaultcss('file-browser-widget', style)
     comp = react.renderComponent(Browser(opts), el)
   }
