@@ -1,6 +1,6 @@
 {
   "name": "file-browser-widget",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "File browser widget",
   "main": "index.js",
   "author": "Mathias Buus",
