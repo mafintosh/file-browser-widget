@@ -67,7 +67,7 @@ proto.renderFile = function() {
 
 proto.render = function() {
   return DOM.div({className:'file-browser-widget'},
-    this.state.blob ? this.renderFile() : this.renderDirectory()
+    this.state.blob !== null ? this.renderFile() : this.renderDirectory()
   )
 }
 
